@@ -3,7 +3,8 @@ from barco import *
 from jugador import *
 
 class Partida:
-    def __init__(self, nombre_jugadorA, nombre_jugadorB):
+    def __init__(self, nombre_jugadorA, nombre_jugadorB, nivel_dificultad):
+        self.nivel_dificultad = nivel_dificultad
         self.jugadorA = Jugador(nombre_jugadorA, True, [], {}, {})
         self.jugadorB = Jugador(nombre_jugadorB, False, [], {}, {})
 
@@ -67,6 +68,52 @@ class Partida:
         result.append(dict_flota)
         return result
 
+
+    def generar_estadisticas(self):
+        disparosA = self.jugadorA.dict_disparos_jugador
+        disparosB = self.jugadorB.dict_disparos_jugador
+        infoA = []
+        infoB = []
+
+        maximo_jugadas = len(disparosA.items()) if len(disparosA.items()) >= len(disparosB.items()) else len(disparosB.items())
+
+        infoA = [f'{keys[1]}{keys[0]}={value}' for keys, value in disparosA.items()]
+        infoB = [f'{keys[1]}{keys[0]}={value}' for keys, value in disparosB.items()]
+
+        datos_resumen = []
+        datos_resumen.append(['Jugadas '+self.jugadorA.nombre, 'Jugadas '+self.jugadorB.nombre])
+        for i in range(maximo_jugadas):
+            datosA = "    "
+            datosB = "    "
+            if i < len(disparosA.items()):
+                datosA = f'{infoA[i]}'
+            if i < len(disparosB.items()):
+                datosB = f'{infoB[i]}'
+            datos_resumen.append([datosA, datosB])
+
+        col_width = max(len(word) for row in datos_resumen for word in row) + 2  # padding
+        for row in datos_resumen:
+            print ("".join(word.ljust(col_width) for word in row))
+
+        self.resumen_jugadas(self.jugadorA.nombre, self.jugadorA.dict_disparos_jugador)
+        self.resumen_jugadas(self.jugadorB.nombre, self.jugadorB.dict_disparos_jugador)
+
+
+
+
+
+
+    def resumen_jugadas(self, nombre_jugador, disparos_jugador ):
+        disparos = disparos_jugador
+        jugadas = list(disparos.values())
+        indx = [*range(1, len(jugadas) + 1, 1)]
+        x = pd.Series(jugadas, index=indx)
+        total = x.describe()['count']
+        tipos_jugada = {'T': 'Tocados', 'H': 'Hundidos', 'X': 'Agua'}
+        print(f'\n\nJugadas de {nombre_jugador}')
+        print(f'Número de disparos: {x.describe()["count"]}')
+        for m in [f'{tipos_jugada[j]}: {x.value_counts()[j]}' for j in list(x.value_counts().keys())]:
+            print(m)
 
 
 

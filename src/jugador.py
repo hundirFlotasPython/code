@@ -8,20 +8,20 @@ class Jugador:
         self.dict_flota_propia = dict_flota_propia
         self.dict_disparos_jugador = dict_disparos
 
-    def realizar_disparo(self, flota_enemiga):
-
+    def realizar_disparo(self, flota_enemiga, nivel_dificultad):
+        num_disparos = 0
         for barco in self.flota_propia:
             for celda in barco.celdas.items():
                 celda_df = traductor_coordenadas_to_df(celda[0])
                 self.dict_flota_propia[celda_df] = celda[1]
-        coordenada_previa = (-1,-1)
+        coordenada_previa = (-1, -1)
         resultado_previo = None
         while True:
             clearConsole()
             if self.humano:
                 tablero(self.dict_flota_propia, "\nTu flota {}:\n".format(self.nombre))
                 tablero(self.dict_disparos_jugador, "\nTus disparos {}:\n".format(self.nombre))
-                coordenada = pedir_coordenadas()
+                coordenada = pedir_coordenadas(self)
                 coordenada = traducir_coordenadas_usuario(coordenada)
             else:
                 coordenada = self.generar_disparo(coordenada_previa, resultado_previo)
@@ -31,23 +31,31 @@ class Jugador:
                 resultado = barco_enemigo.comprobar_disparo(coordenada)
                 if resultado != agua:
                     resultado_previo = resultado
-                    self.dict_disparos_jugador[traductor_coordenadas_to_df(coordenada)]=resultado
-                    if self.destruida_flota_enemiga(flota_enemiga) :
+                    self.dict_disparos_jugador[traductor_coordenadas_to_df(coordenada)] = resultado
+
+                    # Comprobar si se ha eliminado la flota enemiga
+                    if self.destruida_flota_enemiga(flota_enemiga):
                         if self.humano:
                             clearConsole()
                             tablero(self.dict_flota_propia, "\nTu flota {}:\n".format(self.nombre))
                             tablero(self.dict_disparos_jugador, "\nTus disparos {}:\n".format(self.nombre))
                         return 'OK'
                     break
-
+            #Controlar salida del while
+            num_disparos += 1
             if resultado == agua:
                 self.dict_disparos_jugador[traductor_coordenadas_to_df(coordenada)] = resultado
-                break
+                if self.humano:
+                    break
+                else:
+                    if num_disparos >= nivel_dificultad:
+                        break
 
         if self.humano:
             clearConsole()
             tablero(self.dict_flota_propia, "\nTu flota {}:\n".format(self.nombre))
             tablero(self.dict_disparos_jugador, "\nTus disparos {}:\n".format(self.nombre))
+
 
     def destruida_flota_enemiga(self, flota_enemiga):
         result = True

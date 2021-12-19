@@ -17,7 +17,7 @@ class Barco():
             if self.celdas[disparo]==caracter_barco(self.orientacion):
                 self.celdas[disparo]=tocado
 
-            valoresAciertos = list(filter(lambda x : x == tocado or x == hundido ,self.celdas.values() ))
+            valoresAciertos = list(filter(lambda x : x == tocado or x == hundido, self.celdas.values()))
 
             if len(valoresAciertos) == self.eslora:
                 self.celdas[disparo] = hundido
