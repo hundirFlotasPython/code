@@ -38,32 +38,51 @@ Propósito de cada clase:
 <br>
 No se ha implementado una clase Flota para almacenar los barcos; simplemente se han almacenado los objetos barco en una lista.<br>
 
-Se han usado dos clases auxiliares:
+Se han usado dos clases auxiliares:<br>
 - Celdas barco
 - Fronteras barco
 
 Respectivamente se usan para, calcular las celdas que ocupará cada barco y las fronteras que tendrá cada barco. De esta forma al generar el tablero de cada jugador, evitamos que los barcos entren en conflicto.<br>
 
-Adicionalmente existe un archivo utils.py donde se han ubicado funciones que serán usadas por los distintos objetos, para operaciones como:
+Adicionalmente existe un archivo utils.py donde se han ubicado funciones que serán usadas por los distintos objetos, para operaciones como:<br>
 - Almacenar constantes
 - Solicitar inputs del usuario
 - Imprimir la pantalla de juego
 - Generar valores random
 - Traducir coordenadas
 
-##  Esquema de archivos<br>
+##  Esquema de archivos.<br>
 Los archivos en los que se han implementado dichas clases están ubicados en el directorio **src** y se relacionan como muestra el siguiente gráfico:<br>
 
 ![Esquema de archivos](./imgs/hf_20211219173335_esquema_archivos.png)<br><br>
 
+## Ejecución del programa.
+Para iniciar el programa ejecutar el script ***main.py*** en el directorio *src*.<br>
 ![Ejecución del script principal](./imgs/hf_20211219132451.png)<br><br>
+
+Introducir el nombre del jugador A, el jugador B será controlado por el programa y siempre se llamará **Skynet...** <br>
 ![Introducción del nombre del jugador](./imgs/hf_20211219132526.png)<br><br>
-![Introducción del nivel de dificultad](./imgs/hf_20211219132633.png)<br><br>
+
+Indicar el nivel de dificultad.<br>
+![Introducción del nivel de dificultad](./imgs/hf_20211219132633.png)<br>
+En cualquiera de estos dos pasos, si no introducimos un valor, saldremos del programa.<br><br>
+
+Al introducir el nivel de dificultad, sólo aceptará valores entre 1 y 5.<br>
 ![Control del nivel de dificultad](./imgs/hf_20211219132718.png)<br><br>
+
+Se nos dará la bienvenida y se nos pedirá confirmación para comenzar la partida.<br><br>
 ![Comienzo de partida](./imgs/hf_20211219132759.png)<br><br>
+
+En la pantalla de juego se nos muestran dos áreas, una superior con la ubicación de nuestros barcos y una inferior con los disparos que hemos realizado y su resultado.<br>
 ![Pantalla inicial](./imgs/hf_20211219132854.png)<br><br>
+
+El sistema controla que las coordenadas del disparo tienen el formato correcto. En caso contrario no son aceptadas.<br><br>
 ![Control de coordendas](./imgs/hf_20211219134727_control_coordenadas.png)<br><br>
+
+Podemos salir de la partida en todo momento, intorducciendo el mensaje indicado.<br><br>
 ![Salida juego](./imgs/hf_20211219134830_salida_partida.png)<br><br>
+
+
 ![Información primer disparo del jugador](./imgs/hf_20211219132917.png)<br><br>
 ![Información de la primera jugada del ordenador](./imgs/hf_20211219133002.png)<br><br>
 ![Mensaje de finalización de partida](./imgs/hf_20211219133058.png)<br><br>
