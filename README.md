@@ -16,6 +16,8 @@ Este proyecto se ha desarrollado usando Python 3.7 y en el mismo se han empleado
 
 ## Arquitectura de la aplicación.<br>
 Hemos intentado crear una arquitectura orientada a objetos, aunque no ha sido necesario usar conceptos como la herencia, resultando el siguiente esquema:<br>
+<br>
+![Esquema de clases](./imgs/hf_20211219182502_esquema_clases.png)<br><br>
 
 Propósito de cada clase:
 
@@ -50,8 +52,9 @@ Adicionalmente existe un archivo utils.py donde se han ubicado funciones que ser
 - Traducir coordenadas
 
 ##  Esquema de archivos<br>
-Los archivos en los que se han implementado dichas clases están ubicados en el directorio **src** y se relacionan como muestra el siguiente gráfico:
+Los archivos en los que se han implementado dichas clases están ubicados en el directorio **src** y se relacionan como muestra el siguiente gráfico:<br>
 
+![Esquema de archivos](./imgs/hf_20211219173335_esquema_archivos.png)<br><br>
 
 ![Ejecución del script principal](./imgs/hf_20211219132451.png)<br><br>
 ![Introducción del nombre del jugador](./imgs/hf_20211219132526.png)<br><br>
