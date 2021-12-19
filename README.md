@@ -70,20 +70,26 @@ En cualquiera de estos dos pasos, si no introducimos un valor, saldremos del pro
 Al introducir el nivel de dificultad, sólo aceptará valores entre 1 y 5.<br>
 ![Control del nivel de dificultad](./imgs/hf_20211219132718.png)<br><br>
 
-Se nos dará la bienvenida y se nos pedirá confirmación para comenzar la partida.<br><br>
+Se nos dará la bienvenida y se nos pedirá confirmación para comenzar la partida.<br>
 ![Comienzo de partida](./imgs/hf_20211219132759.png)<br><br>
 
 En la pantalla de juego se nos muestran dos áreas, una superior con la ubicación de nuestros barcos y una inferior con los disparos que hemos realizado y su resultado.<br>
 ![Pantalla inicial](./imgs/hf_20211219132854.png)<br><br>
 
-El sistema controla que las coordenadas del disparo tienen el formato correcto. En caso contrario no son aceptadas.<br><br>
+El sistema controla que las coordenadas del disparo tienen el formato correcto. En caso contrario no son aceptadas.<br>
 ![Control de coordendas](./imgs/hf_20211219134727_control_coordenadas.png)<br><br>
 
-Podemos salir de la partida en todo momento, intorducciendo el mensaje indicado.<br><br>
+Podemos salir de la partida en todo momento, introduciendo el mensaje indicado.<br><br>
 ![Salida juego](./imgs/hf_20211219134830_salida_partida.png)<br><br>
 
-
+El resultado de nuestro primer disparo, se nos mostrará antes de pasar al turno de Skynet.<br>
 ![Información primer disparo del jugador](./imgs/hf_20211219132917.png)<br><br>
+
+Al finalizar el turno se nos mostrará el estado de nuestra flota, indicando los aciertos del enemigo.<br>
 ![Información de la primera jugada del ordenador](./imgs/hf_20211219133002.png)<br><br>
+
+Cuando uno de los jugadores destruya la flota completa del contrario, la partida finalizará.<br>
 ![Mensaje de finalización de partida](./imgs/hf_20211219133058.png)<br><br>
+
+Por último se nos mostrará un listado de los disparos de cada uno de los contrincantes y un resumen de los mismos.<br>
 ![Resumen de la partida](./imgs/hf_20211219133127.png)<br><br>
