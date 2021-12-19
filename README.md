@@ -79,7 +79,7 @@ En la pantalla de juego se nos muestran dos áreas, una superior con la ubicaci�
 El sistema controla que las coordenadas del disparo tienen el formato correcto. En caso contrario no son aceptadas.<br>
 ![Control de coordendas](./imgs/hf_20211219134727_control_coordenadas.png)<br><br>
 
-Podemos salir de la partida en todo momento, introduciendo el mensaje indicado.<br><br>
+Podemos salir de la partida en todo momento, introduciendo el mensaje indicado.<br>
 ![Salida juego](./imgs/hf_20211219134830_salida_partida.png)<br><br>
 
 El resultado de nuestro primer disparo, se nos mostrará antes de pasar al turno de Skynet.<br>
